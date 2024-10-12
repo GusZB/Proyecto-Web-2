@@ -5,8 +5,9 @@
 
   $nombreUsuario = $_COOKIE['nombreUsuario'];
   $tipoUsuario = $_COOKIE['tipoUsuario'];
-  $matri = $_COOKIE['matri'];
+  $varmatri = $_COOKIE['mati'];
   $colorEstilo = '#000000';
+
 
   if ($tipoUsuario == '0'){
     $colorEstilo = '#dc3545'; // Admin - Rojo
@@ -17,16 +18,16 @@
   else{
     $colorEstilo = '#007bff'; // Prof - Azul
     $text ='Profesor';}
-    
-
 ?>
 <html>
   <head>
   </head>
   <body>
-    <h2 style="background-color: <?php echo $colorEstilo; ?>; color: white; font-weight: bold;"><?php echo "Nombre de usuario: ".$nombreUsuario. "tipo de usuario: ".$text. "Matricula: ".$matri; ?></h2>
+    <h2 style="background-color: <?php echo $colorEstilo; ?>; color: white; font-weight: bold;"><?php echo $nombreUsuario;echo"          " ; echo $text;echo"          " ; echo $varmatri;?></h2>
     <ul style="list-style-type:square">
       <li><a href="Usuarios.php">Usuarios</a></li>
+      <li><a href="tabla.php">Borrar Campos</a></li>
+      <li><a href="tabla_update.php">Actualizar campos</a></li>
       <li>Ayuda
         <ul style="list-style-type:circle">
           <li>FAQ's</li>

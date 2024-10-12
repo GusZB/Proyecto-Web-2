@@ -1,4 +1,5 @@
 <?php
+   $x = $_COOKIE['variable_x'];
    $varMatricula = $_POST ['varMatricula'];
    $varNombre = $_POST ['varNombre'];
    $varCarrera = $_POST ['varCarrera'];
@@ -18,10 +19,9 @@
   $database = 't15a_proyecto';
   $band = false;
   mysqli_select_db($link, $database);
-  $cadQuery = "INSERT INTO usuarios VALUES ('$varMatricula','$varNombre','$varCarrera', '$varGeneracion','$varsemestre','$varUsername','$varPassword','$varTipo')";
+  $cadQuery = "UPDATE usuarios SET matricula = '$varMatricula',nombre_completo ='$varNombre',carrera = '$varCarrera',generacion = '$varGeneracion',semestre ='$varsemestre',username ='$varUsername', password ='$varPassword',tipo = '$varTipo' where matricula = '$x'";
   $query = mysqli_query($link, $cadQuery);
   mysqli_close($link);
-
-      header("Location: Menu.php");
-
+  setcookie("variable_x", "", time() - 3600);
+  header("Location: tabla_update.php");
 ?>

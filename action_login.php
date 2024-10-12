@@ -18,8 +18,8 @@
   $query = mysqli_query($link, $cadQuery);
   for ($c = 0; $c < mysqli_num_rows($query); $c++) {
     $f = mysqli_fetch_array($query);
-
-    $matri = $f[0];
+    
+    $mati = $f[0];
     $nombreUsuario = $f[1];
     $tipoUsuario = $f[7];
     $band = true;
@@ -28,11 +28,12 @@
 
   if ($band) {
     // Crear las cookies
+    setcookie("mati", $mati);
     setcookie("nombreUsuario", $nombreUsuario);
     setcookie("tipoUsuario", $tipoUsuario);
-    setcookie("matri",$matri);
+    
     // Enviar al menu
-    header("Location: Menu 1.php");
+    header("Location: Menu.php");
   }
   else { header("Location: Login.php"); }
 ?>
