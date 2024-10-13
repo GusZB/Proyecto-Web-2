@@ -71,10 +71,9 @@
             transform: scale(1.1);
         }
 
-        /* Oculta el menú de información al inicio */
         .info-usuario {
             position: absolute;
-            top: 85px; /* Alineado justo debajo de la imagen */
+            top: 85px;
             left: 0;
             background-color: white;
             box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
@@ -82,15 +81,12 @@
             padding: 10px;
             width: 220px;
             z-index: 10;
-
-            /* Inicialización para la transición */
             opacity: 0;
             visibility: hidden;
             transform: translateY(-10px);
             transition: all 300ms ease;
         }
 
-        /* Triángulo invertido en la parte superior del menú */
         .info-usuario::before {
             content: '';
             position: absolute;
@@ -101,24 +97,22 @@
             border-bottom: 12px solid white;
         }
 
-        /* Estilo para cada elemento del menú emergente */
         .info-usuario li {
             list-style: none;
             padding: 8px 10px;
-            border-bottom: 1px solid #ddd;
+            border-bottom: 3px solid <?php echo $colorEstilo;?>;
             font-size: 14px;
-            color: #333;
+            color: black;
         }
 
         .info-usuario li:last-child {
             border-bottom: none;
         }
 
-        /* Mostrar el menú con transición suave */
         .logo:hover .info-usuario {
             opacity: 1;
             visibility: visible;
-            transform: translateY(0); /* Mueve el menú a su posición final */
+            transform: translateY(0);
         }
 
         nav{
@@ -198,7 +192,7 @@
 
         nav ul li ul li a{
             display: block;
-            color: #0099E9;
+            color: black;
             padding: 6px;
             padding-left: 14px;
             margin-top: 10px;
